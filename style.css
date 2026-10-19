@@ -128,7 +128,7 @@ label{display:block;font-size:13px;font-weight:600;margin:0 0 8px 4px}
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto!important}
   .decor img{animation:none}
-   @media (max-width: 600px) {
+  @media (max-width: 600px) {
   .decor img {
     display: block;
   }
