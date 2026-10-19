@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuickConvert — Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Decorative background: world map + floating paper banknotes (behind everything) -->
+  <div class="decor" aria-hidden="true">
+    <svg class="map" viewBox="0 0 800 400"><g fill="#cfe6d8"><path d="M90 90q60-50 140-30t40 80q-40 60-90 40t-90-90z"/><path d="M200 230q50-10 70 40t-30 100q-50-30-40-140z"/><path d="M380 80q70-40 130 0t60 60q-60 30-90 0t-100-60z"/><path d="M400 170q60-20 100 30t0 130q-70 10-90-50t-10-110z"/><path d="M560 90q100-30 180 20t20 90q-80 40-150 0t-50-110z"/><path d="M650 270q50-10 80 20t-30 50q-50 0-50-70z"/></g></svg>
+    <img class="note n1" src="assets/australia1.jpg" alt="Australian currency note">
+<img class="note n2" src="assets/china.jpg" alt="Chinese currency note">
+<img class="note n4" src="assets/dollar.jpg" alt="US dollar note">
+<img class="note n5" src="assets/egypt.jpg" alt="Egyptian currency note">
+<img class="note n6" src="assets/euro.png" alt="Euro note">
+<img class="note n7" src="assets/japan.webp" alt="Japanese yen note">
+<img class="note n8" src="assets/pound.jpg" alt="British pound note">
+<img class="note n9" src="assets/rupee.jpg" alt="Indian rupee note">
+<img class="note n9" src="assets/coins2.jpg" alt="all coins">
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#top" aria-label="QuickConvert home">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0f6b45" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4.5 6.5 4.5 10S15 19 12 22C9 19 7.5 15.5 7.5 12S9 5 12 2z"/></svg>
+      <span>Quick<b>Convert</b></span>
+    </a>
+    <nav aria-label="Main"><a class="active" href="#top">Home</a><a href="#converter">Converter</a><a href="#about">About</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Currency <span>Converter</span></h1>
+      <p>Convert currencies across the world with real-time exchange rates</p>
+    </section>
+
+    <section class="card" id="converter" aria-label="Currency converter">
+      <div class="row">
+        <div class="panel">
+          <label for="amount">Enter Amount</label>
+          <div class="field">
+            <input id="amount" type="text" inputmode="decimal" value="1000" autocomplete="off">
+            <div class="combo" id="fromCombo"></div>
+          </div>
+        </div>
+        <button id="swap" class="swap" type="button" aria-label="Swap currencies">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f6b45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg>
+        </button>
+        <div class="panel">
+          <label for="result">Convert To</label>
+          <div class="field">
+            <input id="result" type="text" readonly placeholder="—" aria-live="polite">
+            <div class="combo" id="toCombo"></div>
+          </div>
+        </div>
+      </div>
+
+      <button id="convert" class="convert" type="button" disabled>Convert <span aria-hidden="true">→</span></button>
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+      <div class="out">
+        <div><small>Converted Amount</small><strong id="outAmount">—</strong></div>
+        <div class="meta">
+          <div id="outRate">Rate not loaded yet</div>
+          <em id="outSource">(Reference rate, not a live trading rate)</em>
+          <div id="outTime" class="time"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <p><b>About:</b>
+
+QuickConvert makes currency conversion simple and convenient. Select your currencies, enter an amount, and view the converted value using available exchange rates. Explore currencies from around the world with ease.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
